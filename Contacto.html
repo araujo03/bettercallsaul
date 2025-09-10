@@ -1,0 +1,81 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Página dedicada a la serie Better Call Saul con información, imágenes y más.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/telefono.png" type="image/png">
+    <title>Contacto - Better Call Saul</title>
+</head>
+<body>
+    <header id="inicio">
+        <a href="index.html">
+        <img class="logo" src="img/logo.png" alt="Logo de la serie">
+        </a>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#personajes">Personajes</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contacto-wrapper">
+                <div class="form-container">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="fnombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="fapellido" name="apellido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Número de teléfono:</label>
+                            <input type="tel" id="ftelefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico:</label>
+                            <input type="email" id="femail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="fmensaje" name="mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+                <div class="info-container">
+                    <h3>Información de Contacto</h3>
+                    <p><span class="txt">Dirección:</span> 9800 Montgomery Blvd NE, Albuquerque, NM 87111</p>
+                    <p><span class="txt">Teléfono:</span> +1 (555) 123-4567</p>
+                    <div class="map-placeholder" id="map"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>© 2024 Better Call Saul Fan Page</p>
+        <p>
+            <a href="https://www.instagram.com/bettercallsaulamc" target="_blank" rel="noopener noreferrer">
+                <img class="Instagram" src="img/logo_ig.png" alt="Logo de Instagram" width="30">
+            </a>
+            <a href="https://x.com/BetterCallSaul?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer">
+                <img class="Twitter" src="img/x_logo.webp" alt="Logo de Twitter" width="30">
+            </a>
+        </p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyColG4mZJZONJib7bspf1MNpRWPD5DC8zY&callback=initMap"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Saul Goodman</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="inicio">
+        <a href="index.html">
+        <img class="logo" src="img/logo.png" alt="Logo de la serie">
+        </a>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#personajes">Personajes</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery">
+            <h1>Galería de Imágenes</h1>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img/bcs1.webp" alt="Imagen 1" onclick="openLightbox(0)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bcs2.webp" alt="Imagen 2" onclick="openLightbox(1)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bcs3.webp" alt="Imagen 3" onclick="openLightbox(2)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bcs4.webp" alt="Imagen 4" onclick="openLightbox(3)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bcs5.webp" alt="Imagen 5" onclick="openLightbox(4)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bcs6.webp" alt="Imagen 6" onclick="openLightbox(5)">
+                </div>
+                 <div class="gallery-item">
+                    <img src="img/bcs7.webp" alt="Imagen 7" onclick="openLightbox(6)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bcs8.webp" alt="Imagen 8" onclick="openLightbox(7)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bcs9.webp" alt="Imagen 9" onclick="openLightbox(8)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bcs10.webp" alt="Imagen 10" onclick="openLightbox(9)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bcs11.webp" alt="Imagen 11" onclick="openLightbox(10)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bcs12.webp" alt="Imagen 12" onclick="openLightbox(11)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gus.webp" alt="Imagen 12" onclick="openLightbox(11)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/kim.webp" alt="Imagen 12" onclick="openLightbox(11)">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/howard.webp" alt="Imagen 12" onclick="openLightbox(11)">
+                </div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" style="display:none;">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+            <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+            <a class="next" onclick="changeImage(1)">&#10095;</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Better Call Saul Fan Page</p>
+        <p>
+            <a href="https://www.instagram.com/bettercallsaulamc" target="_blank" rel="noopener noreferrer">
+                <img class="Instagram" src="img/logo_ig.png" alt="Logo de Instagram" width="30">
+            </a>
+            <a href="https://x.com/BetterCallSaul?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer">
+                <img class="Twitter" src="img/x_logo.webp" alt="Logo de Twitter" width="30">
+            </a>
+        </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
