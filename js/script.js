@@ -22,6 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    const characterCards = document.querySelectorAll('.character-card');
+    characterCards.forEach(card => {
+        card.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            characterCards.forEach(c => {
+                if (c !== card) {
+                    c.classList.remove('flipped');
+                }
+            });
+            card.classList.toggle('flipped');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        const isCard = e.target.closest('.character-card');
+        if (!isCard) {
+            characterCards.forEach(card => {
+                card.classList.remove('flipped');
+            });
+        }
+    });
 });
 
 let currentImageIndex;

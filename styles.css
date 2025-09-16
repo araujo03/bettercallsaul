@@ -175,7 +175,8 @@ section h2 {
     transform-style: preserve-3d;
 }
 
-.character-card:hover .character-card-inner {
+.character-card:hover .character-card-inner,
+.character-card.flipped .character-card-inner {
     transform: rotateY(180deg);
 }
 
