@@ -8,17 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    document.addEventListener('keydown', (e) => {
-        if (document.getElementById('lightbox').style.display === 'flex') {
-            if (e.key === 'ArrowRight') {
-                changeImage(1);
-            } else if (e.key === 'ArrowLeft') {
-                changeImage(-1);
-            } else if (e.key === 'Escape') {
-                closeLightbox();
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'ArrowRight') {
+                    changeImage(1);
+                } else if (e.key === 'ArrowLeft') {
+                    changeImage(-1);
+                } else if (e.key === 'Escape') {
+                    closeLightbox();
+                }
             }
-        }
-    });
+        });
+    }
 });
 
 let currentImageIndex;
