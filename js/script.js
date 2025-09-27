@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.addEventListener('click', () => {
             navUl.classList.toggle('show');
         });
+
+        const navLinks = navUl.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navUl.classList.remove('show');
+            });
+        });
     }
 
     const lightbox = document.getElementById('lightbox');
@@ -43,7 +50,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.remove('flipped');
             });
         }
+
+        if (hamburger && navUl) {
+            const isClickInsideNav = navUl.contains(e.target);
+            const isHamburger = hamburger.contains(e.target);
+
+            if (!isClickInsideNav && !isHamburger && navUl.classList.contains('show')) {
+                navUl.classList.remove('show');
+            }
+        }
     });
+
+    const timelineEvents = document.querySelectorAll('.timeline-event');
+    if (timelineEvents.length > 0) {
+        timelineEvents.forEach(event => {
+            const year = event.querySelector('.timeline-year');
+            year.addEventListener('click', () => {
+                timelineEvents.forEach(otherEvent => {
+                    if (otherEvent !== event) {
+                        otherEvent.classList.remove('active');
+                    }
+                });
+                event.classList.toggle('active');
+            });
+        });
+    }
+
+    const personajesLink = document.querySelector('a[href*="#personajes"]');
+    if (personajesLink) {
+        personajesLink.addEventListener('click', (e) => {
+            if (window.location.pathname.includes('index.html')) {
+                e.preventDefault();
+                smoothScrollTo(document.getElementById('personajes'));
+            }
+        });
+    }
+
+    if (window.location.hash === '#personajes') {
+        const targetElement = document.getElementById('personajes');
+        if (targetElement) {
+            setTimeout(() => smoothScrollTo(targetElement), 100);
+        }
+    }
 });
 
 let currentImageIndex;
@@ -69,6 +117,7 @@ function changeImage(n) {
     }
     document.getElementById('lightbox-img').src = images[currentImageIndex];
 }
+
 function initMap() {
   const oficina = { lat: -34.640556, lng: -58.601944 }; // Coordenadas de la dirección
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -80,4 +129,16 @@ function initMap() {
     map: map,
     title: "UTN Haedo"
   });
+}
+
+function smoothScrollTo(element) {
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.offsetHeight : 0;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = window.pageYOffset + elementPosition - headerHeight;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
 }
