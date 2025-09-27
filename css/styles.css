@@ -673,4 +673,21 @@ footer a {
     .timeline-event:nth-child(even)::after {
         left: 20px;
     }
+
+
+}
+
+@media (max-width: 576px) {
+  .universo-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .universo-card {
+    width: 90%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .universo-card img {
+    height: 140px;
+  }
 }
